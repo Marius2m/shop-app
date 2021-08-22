@@ -1,4 +1,6 @@
 import express from 'express'
+import compression from 'compression'
+import ProductRoutes from '~/routes/ProductRoutes'
 import { ConnectToDB } from './middlewares/DBConnection'
 import { logger } from './config/logger'
 import { NotFoundError } from './utils/Errors'
@@ -6,6 +8,7 @@ import { NotFoundError } from './utils/Errors'
 const app = express()
 
 // Session Start
+app.use(compression())
 app.use(ConnectToDB({
 	user: process.env.NEO4J_USER,
 	pass: process.env.NEO4J_PASS,
@@ -14,6 +17,7 @@ app.use(ConnectToDB({
 
 // Paths
 app.use('/health', (req, res, next) => res.json({ ams: ':)' }))
+app.use('/products', ProductRoutes)
 
 // Session End
 // app.use(CloseDBConnection)
