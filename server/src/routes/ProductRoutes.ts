@@ -37,7 +37,7 @@ router.patch(
 )
 router.delete(
     '/:id',
-    (_, res) => res.status(501).send('Not implemented')
+    ProductsController.remove
 )
 
 export default router

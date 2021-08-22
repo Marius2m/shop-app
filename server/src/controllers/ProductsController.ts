@@ -56,3 +56,17 @@ export const create = async (req, res, next) => {
         next(err)
     }
 }
+
+
+export const remove = async (req, res, next) => {
+    const { id } = req.params
+
+    try {
+        await ProductsRepository.remove(id)
+        
+        res.status(204).json()
+        next()
+    } catch (err) {
+        next(err)
+    }
+}

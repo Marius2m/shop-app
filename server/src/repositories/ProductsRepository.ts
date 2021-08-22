@@ -82,4 +82,19 @@ export default class ProductsRepository {
 
         return null
 	}
+    
+    static async remove(id: string): Promise<void> {
+		const queryParams = {
+            id
+        }
+
+		const query = `
+            MATCH (product:Product)
+            WHERE product.id = $id
+
+            DETACH DELETE product
+		`
+
+		await getDBSession().run(query, queryParams)
+	}
 }
