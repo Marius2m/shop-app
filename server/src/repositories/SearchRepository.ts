@@ -10,11 +10,15 @@ export default class SearchRepository {
 		const queryParams = {
             skip: int(skip),
             limit: int(limit),
-            term,
+            term: term.toLowerCase()
         }
 
         let termSubQuery = ''
-        if (!!term) termSubQuery = `WHERE product.title CONTAINS ($term)`
+        if (!!term) termSubQuery = `
+            WHERE
+                toLower(product.title) CONTAINS ($term) OR
+                toLower(product.descriptions) CONTAINS ($term)
+        `
 
 		const query = `
             MATCH (product:Product)
