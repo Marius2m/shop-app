@@ -2,6 +2,7 @@ import express from 'express'
 import compression from 'compression'
 
 import ProductRoutes from '~/routes/ProductRoutes'
+import SearchRoutes from '~/routes/SearchRoutes'
 import { ConnectToDB } from './middlewares/DBConnection'
 import { logger } from './config/logger'
 import { NotFoundError } from './utils/Errors'
@@ -21,6 +22,7 @@ app.use(ConnectToDB({
 // Paths
 app.use('/health', (req, res, next) => res.json({ ams: ':)' }))
 app.use('/products', ProductRoutes)
+app.use('/search', SearchRoutes)
 
 // Session End
 // app.use(CloseDBConnection)
