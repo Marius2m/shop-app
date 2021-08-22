@@ -35,7 +35,7 @@ const ProductCard: React.FC<ProductCardProps> = (props: ProductCardProps) => {
                     <img
                         className={styles.card__image}
                         alt="example"
-                        src={product.imageUrl}
+                        src={product.imageLink}
                     />
                 }
                 actions={[
