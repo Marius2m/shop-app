@@ -25,7 +25,7 @@ router.delete(
 // /products/:id
 router.get(
     '/:id',
-    (_, res) => res.status(501).send('Not implemented')
+    ProductsController.getById
 )
 router.post(
     '/:id',

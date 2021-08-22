@@ -35,4 +35,25 @@ export default class ProductsRepository {
 
         return new PaginatedQuery([], skip, limit)
     }
+
+    static async getById({ id }: { id: string }): Promise<ProductQuery> {
+		const queryParams = {
+            id
+        }
+
+		const query = `
+            MATCH (product:Product)
+            WHERE product.id = $id
+
+            RETURN product
+		`
+
+		const result = await getDBSession().run(query, queryParams)
+
+        if (result.records?.length > 0) {
+            return new ProductQuery(result.records[0].get('product').properties)
+        }
+
+        return null
+	}
 }
