@@ -1,5 +1,6 @@
 import express from 'express'
 import compression from 'compression'
+import cors from 'cors'
 
 import ProductRoutes from '~/routes/ProductRoutes'
 import SearchRoutes from '~/routes/SearchRoutes'
@@ -10,6 +11,7 @@ import { NotFoundError } from './utils/Errors'
 const app = express()
 
 // Session Start
+app.use(cors({ origin: '*' }))
 app.use(compression())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
