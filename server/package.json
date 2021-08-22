@@ -4,11 +4,21 @@
   "description": "Server for the shop",
   "main": "src/index.ts",
   "scripts": {
+    "start": "webpack --watch --env SERVER_ENV=development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "MM",
   "license": "ISC",
   "dependencies": {
-    "express": "4.17.1"
+    "express": "4.17.1",
+    "typescript": "^4.3.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7",
+    "nodemon-webpack-plugin": "4.5.2",
+    "source-map-loader": "^3.0.0",
+    "ts-loader": "9.2.5",
+    "webpack": "^5.5.0",
+    "webpack-cli": "^4.8.0"
   }
 }
