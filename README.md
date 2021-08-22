@@ -8,11 +8,11 @@ For this project I am using the following stack:
   * Neo4j
 
 ### How these integrate together:
-The frontend app will of offer the following functionality:
+The frontend app will offer the following functionality:
 * friendly and intuitive UI
 * page for displaying searched products by title
-* page to see all products in the shop
-* page see a specific product's page
+* page to browse all products in the shop
+* page to see a specific product's page
 * pagination for all pages
 
 The purpose of the backend is to serve the necessary data for displaying the products on the frontend. It is a REST API with two endpoints:
