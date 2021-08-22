@@ -11,7 +11,7 @@ router.get(
 )
 router.post(
     '/',
-    (_, res) => res.status(501).send('Not implemented')
+    ProductsController.create
 )
 router.patch(
     '/',

@@ -1,7 +1,9 @@
 import { int } from 'neo4j-driver'
 import { Integer } from 'neo4j-driver-core'
+import { v4 as uuidGen } from 'uuid';
 
 import { PaginatedQuery } from '~/data/PaginatedQuery'
+import Product from '~/data/Product'
 import { ProductQuery } from '~/data/ProductQuery'
 import { getDBSession } from '~/middlewares/DBConnection'
 
@@ -44,6 +46,30 @@ export default class ProductsRepository {
 		const query = `
             MATCH (product:Product)
             WHERE product.id = $id
+
+            RETURN product
+		`
+
+		const result = await getDBSession().run(query, queryParams)
+
+        if (result.records?.length > 0) {
+            return new ProductQuery(result.records[0].get('product').properties)
+        }
+
+        return null
+	}
+
+    static async create(product: Product): Promise<ProductQuery> {
+		const queryParams = {
+            properties: {
+                ...product,
+                id: uuidGen(),
+            }
+        }
+
+		const query = `
+            CREATE (product:Product)
+            SET product = $properties
 
             RETURN product
 		`
