@@ -17,7 +17,7 @@ function useQuery(location) {
 const SearchPage = () => {
     const location = useLocation()
     let query = useQuery(location)
-    const availableFilters = ['in-stock', 'brand']
+    const availableFilters = ['new', 'in-stock', 'brand']
 
     const [ isLoading, setIsLoading ] = useState(true)
     const [ currentPage, setCurrentPage ] = useState<number>(1)
@@ -28,13 +28,7 @@ const SearchPage = () => {
 
     const onPageHandler = (page: number, pageSize: number | undefined) => setCurrentPage(page)
 
-    useEffect(() => {
-        if (!isLoading) {
-            setIsLoading(true)
-        }
-
-        const skip = (currentPage - 1) * limit
-        
+    const retrieveProducts = async (skip) => {
         SearchService
             .search({
                 filters: query.getAll('filters[]') ?? 'lol',
@@ -46,7 +40,24 @@ const SearchPage = () => {
                 setProducts(response.data)
             })
             .catch(error => console.log('Erorr while retrieving results\n' + error))
-    }, [currentPage, location])
+    }
+
+    useEffect(() => {
+        if (!isLoading) {
+            setIsLoading(true)
+        }
+
+        const skip = (currentPage - 1) * limit
+        retrieveProducts(skip)
+    }, [currentPage])
+
+    useEffect(() => {
+        if (currentPage === 1) {
+            retrieveProducts(0)
+        } else {
+            setCurrentPage(1)
+        }
+    }, [location])
 
     useEffect(() => {
         if (isLoading && !!products) {
