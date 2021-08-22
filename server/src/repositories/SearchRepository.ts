@@ -13,8 +13,6 @@ export default class SearchRepository {
             term,
         }
 
-        console.log('queryParams', filters)
-
         let termSubQuery = ''
         if (!!term) termSubQuery = `WHERE product.title CONTAINS ($term)`
 
