@@ -4,6 +4,7 @@
   "description": "Server for the shop",
   "main": "src/index.ts",
   "scripts": {
+    "build": "webpack --env SERVER_ENV=production",
     "start": "webpack --watch --env SERVER_ENV=development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +18,7 @@
     "express": "4.17.1",
     "neo4j-driver": "4.3.0",
     "typescript": "^4.3.5",
+    "uuid": "8.3.2",
     "winston": "3.3.3"
   },
   "devDependencies": {
