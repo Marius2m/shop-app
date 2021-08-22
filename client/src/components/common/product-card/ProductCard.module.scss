@@ -1,0 +1,28 @@
+.card {
+    cursor: pointer;
+
+    &__image {
+        cursor: pointer;
+        object-fit: cover;
+        width: 100%;
+        height: 200px;
+    }
+}
+
+.meta {
+    &__section {
+        display: flex;
+        justify-content: space-between;
+
+        &__price {
+            display: flex;
+            align-items: flex-end;
+            color: black;
+
+            &::after {
+                content: '€';
+                margin-left: 2px;
+            }
+        }
+    }
+}
