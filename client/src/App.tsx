@@ -11,6 +11,7 @@ import {
 import Header from './components/layout/header/Header'
 import HomePage from './components/pages/home/HomePage'
 import SearchPage from './components/pages/search/SearchPage'
+import ProductsPage from './components/pages/products/ProductsPage'
 
 import styles from './App.module.scss'
 
@@ -33,7 +34,7 @@ const AppLayout = () => {
       <Content className={styles.layout__content}>
         <Switch>
           <Route path='/' exact > <HomePage /> </Route>
-          <Route path='/products' exact> <SearchPage /> </Route>
+          <Route path='/products' exact> <ProductsPage /> </Route>
           <Route path='/products/:id'> Pooducts::Id</Route>
           <Route path='/search'> <SearchPage /> </Route>
           <Route path='/favorites'> Favorites </Route>
