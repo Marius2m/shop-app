@@ -1,5 +1,6 @@
 import express from 'express'
 import compression from 'compression'
+
 import ProductRoutes from '~/routes/ProductRoutes'
 import { ConnectToDB } from './middlewares/DBConnection'
 import { logger } from './config/logger'
@@ -9,6 +10,8 @@ const app = express()
 
 // Session Start
 app.use(compression())
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
 app.use(ConnectToDB({
 	user: process.env.NEO4J_USER,
 	pass: process.env.NEO4J_PASS,
