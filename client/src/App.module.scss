@@ -1,4 +1,12 @@
+$header-height: 46px;
+$footer-height: 70px;
+
 .layout {
+	&__content {
+		min-height: calc(100vh - #{$header-height} - #{$footer-height});
+		padding: 16px 8px;
+	}
+
 	&__footer {
 		text-align: center;
 		color: blue;

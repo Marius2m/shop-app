@@ -1,0 +1,31 @@
+.header {
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 16px;
+    background-color: #001529;
+
+    &__logo {
+        cursor: pointer;
+        color: white;
+        padding: 4px;
+        font-size: 24px;
+    }
+
+    &__search {
+        width: 50%;
+        min-width: 150px;
+        max-width: 450px;
+        margin: 0 8px;
+    }
+
+    &__menu {
+        width: 55px;
+
+        @media (min-width: 550px) {
+            width: 275px;
+        }
+    }
+}

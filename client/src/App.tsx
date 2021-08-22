@@ -8,6 +8,8 @@ import {
   Route,
 } from 'react-router-dom'
 
+import Header from './components/layout/header/Header'
+
 import styles from './App.module.scss'
 
 const App: FC = () => {
@@ -25,7 +27,7 @@ const AppLayout = () => {
 
   return (
     <Layout>
-      Header
+      <Header />
       <Content className={styles.layout__content}>
         <Switch>
           <Route path='/' exact > Home </Route>
