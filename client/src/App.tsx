@@ -9,6 +9,8 @@ import {
 } from 'react-router-dom'
 
 import Header from './components/layout/header/Header'
+import HomePage from './components/pages/home/HomePage'
+import SearchPage from './components/pages/search/SearchPage'
 
 import styles from './App.module.scss'
 
@@ -30,10 +32,10 @@ const AppLayout = () => {
       <Header />
       <Content className={styles.layout__content}>
         <Switch>
-          <Route path='/' exact > Home </Route>
+          <Route path='/' exact > <HomePage /> </Route>
           <Route path='/products' exact> Products </Route>
           <Route path='/products/:id'> Pooducts::Id</Route>
-          <Route path='/search'> Search </Route>
+          <Route path='/search'> <SearchPage /> </Route>
           <Route path='/favorites'> Favorites </Route>
         </Switch>
       </Content>
