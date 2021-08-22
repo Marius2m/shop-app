@@ -33,7 +33,7 @@ const AppLayout = () => {
       <Content className={styles.layout__content}>
         <Switch>
           <Route path='/' exact > <HomePage /> </Route>
-          <Route path='/products' exact> Products </Route>
+          <Route path='/products' exact> <SearchPage /> </Route>
           <Route path='/products/:id'> Pooducts::Id</Route>
           <Route path='/search'> <SearchPage /> </Route>
           <Route path='/favorites'> Favorites </Route>
