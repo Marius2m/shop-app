@@ -60,7 +60,7 @@ const ProductCard: React.FC<ProductCardProps> = (props: ProductCardProps) => {
                     title={product.title}
                     description={
                         <section className={styles.meta__section}>
-                            <p>{product.description}</p>
+                            <p className={styles.meta__section__description}>{product.description}</p>
                             <p className={styles.meta__section__price}>{product.price} </p>
                         </section>
                     }

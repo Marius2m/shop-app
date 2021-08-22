@@ -14,6 +14,13 @@
         display: flex;
         justify-content: space-between;
 
+        &__description {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+        }
+
         &__price {
             display: flex;
             align-items: flex-end;
