@@ -1,0 +1,20 @@
+version: "3"
+services:
+  productsapi:
+    build: ./server
+    ports:
+      - 4000:4000
+    environment:
+      - SERVER_ENV=prod
+      - NEO4J_USER=${NEO4J_USER}
+      - NEO4J_PASS=${NEO4J_PASS}
+      - NEO4J_URL=${NEO4J_URL}
+    restart: always
+  shopapp:
+    build: ./client
+    ports:
+      - 3000:3000
+    environment:
+      - BACKEND_API="http://productsapi:4000"
+    links:
+      - productsapi
