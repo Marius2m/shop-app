@@ -1,7 +1,7 @@
 # shop-app
 For this project I am using the following stack:
 * Frontend
-  * React + TypeScript + SCSS + CSS Modules
+  * React + TypeScript + SCSS + CSS Modules + AntD UI library
 * Backend
   * NodeJS + TypeScript + Express
 * DB
@@ -15,10 +15,10 @@ The frontend app will offer the following functionality:
 * page to see a specific product's page
 * pagination for all pages
 
-The purpose of the backend is to serve the necessary data for displaying the products on the frontend. It is a REST API with two endpoints:
-* /search   <-- retrieve products paginated based on search term (/ filter not implemented)
+The purpose of the backend is to serve the necessary data for displaying the products on the frontend. Logs are handled by winston logging library, and the apis are built with Express. It is a REST API with 3 endpoints:
+* /search   <-- GET - retrieve products paginated based on search term (/ filter not implemented)
 * /products <-- CRUD operations
-* /health   <-- GET to check server status
+* /health   <-- GET - check server status
 
 The DB is a simple Neo4j where each product is stored/ retrieved by the nodeJS server
 
@@ -65,3 +65,6 @@ NEO4J_URL=""
 docker-compose —env-file ./.env up -d 
 or docker compose —env-file ./.env up -d
 ```
+
+## Feature plans:
+
