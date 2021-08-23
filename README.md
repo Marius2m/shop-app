@@ -65,6 +65,17 @@ NEO4J_URL=""
 docker-compose —env-file ./.env up -d 
 or docker compose —env-file ./.env up -d
 ```
+##### Verify backend:
+* using postman or curl:
+```
+curl --location --request GET 'http://localhost:4000/health'
+curl --location --request GET 'http://localhost:4000/products'
+```
+##### Verify frontend:
+* on any browser, access:
+```
+http:localhost:3000
+```
 
 ## Future plans:
 Since the project is at the beginning there are improvements that can be done:
