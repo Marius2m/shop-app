@@ -1,7 +1,7 @@
 # shop-app
 For this project I am using the following stack:
 * Frontend
-  * React + TypeScript + SCSS + CSS Modules + AntD UI library
+  * React + TypeScript + SCSS + CSS Modules + AntDesign UI library
 * Backend
   * NodeJS + TypeScript + Express
 * DB
@@ -66,5 +66,23 @@ docker-compose —env-file ./.env up -d
 or docker compose —env-file ./.env up -d
 ```
 
-## Feature plans:
+## Future plans:
+Since the project is at the beginning there are improvements that can be done:
+#### Frontend
+- [ ] add auth pages to restrict users from certain functionality & parts of the app
+- [ ] refine product page and make it more responsive
+- [ ] create user roles so admins/ merchants can make changes on the web (add/ update/ remove products)
+- [ ] implement home, cart, favorites pages
+- [ ] show users recommended products
+- [ ] add skeleton for components (placeholder while content loads)
 
+#### Backend
+- [ ] create routes for auth to secure endpoints
+- [ ] improve search endpoint (add filters, add full-text search, add sorting)
+- [ ] add validation on routes (query/ path params, body)
+- [ ] create route for recommending content to the user
+
+#### Infrastructure
+- [ ] deploy client & server (ex: Amazon S3, Lambda)
+- [ ] add caching for products (ex: Amazon API Gateway)
+- [ ] create a cron job that triggers a sync of imported products with the db on a daily basis (ex: Amazon CloudWatch)
