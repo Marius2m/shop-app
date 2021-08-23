@@ -16,7 +16,7 @@ The frontend app will offer the following functionality:
 * pagination for all pages
 
 The purpose of the backend is to serve the necessary data for displaying the products on the frontend. It is a REST API with two endpoints:
-* /search   <-- retrieve products paginated based on search term / filter
+* /search   <-- retrieve products paginated based on search term (/ filter not implemented)
 * /products <-- CRUD operations
 * /health   <-- GET to check server status
 
