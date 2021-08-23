@@ -86,12 +86,14 @@ Since the project is at the beginning there are improvements that can be done:
 - [ ] implement home, cart, favorites pages
 - [ ] show users recommended products
 - [ ] add skeleton for components (placeholder while content loads)
+- [ ] add testing
 
 #### Backend
 - [ ] create routes for auth to secure endpoints
 - [ ] improve search endpoint (add filters, add full-text search, add sorting)
 - [ ] add validation on routes (query/ path params, body)
 - [ ] create route for recommending content to the user
+- [ ] add unit / functional testing
 
 #### Infrastructure
 - [ ] deploy client & server (ex: Amazon S3, Lambda)
